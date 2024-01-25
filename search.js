@@ -18,9 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
             movieElement.classList.add('sw_char');
             
             movieElement.innerHTML = `
+                <img src="${movie.Poster}" alt="${movie.Title}">
                 <h3>${movie.Title}</h3>
-                <p>Year: ${movie.Year}</p>
-                <p>Type: ${movie.Type}</p>
             `;
             
             swCharList.appendChild(movieElement);
