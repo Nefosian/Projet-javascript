@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const swCharList = document.getElementById('sw_char_list');
     const nextPageButton = document.getElementById('ex_03_next_page');
     const lastPageButton = document.getElementById('ex_03_last_page');
-    let currentPage = 1;
+    let currentPage = 0;
 
     function fetchOmdbData(page) {
         document.getElementById('loader').style.display = "block";
@@ -40,6 +40,8 @@ document.addEventListener('DOMContentLoaded', function () {
         fetchOmdbData(currentPage)
             .then(displayMovies);
     }
+
+    loadNextPage();
 
     lastPageButton.addEventListener('click', loadPreviousPage);
     nextPageButton.addEventListener('click', loadNextPage);
