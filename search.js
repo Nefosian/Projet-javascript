@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
     const swCharList = document.getElementById('sw_char_list');
-    const nextPageButton = document.getElementById('ex_03_next_page');
-    const lastPageButton = document.getElementById('ex_03_last_page');
+    const nextPageButton = document.getElementById('next_page');
+    const lastPageButton = document.getElementById('previous_page');
     const searchButton = document.getElementById('searchButton');
     const searchInput = document.getElementById('searchInput');
     let currentPage = 1;
 
-    function fetchOmdbData(page, search) {
+    function fetchData(page, search) {
         document.getElementById('loader').style.display = "block";
         swCharList.innerHTML = '';
         let apiUrl = `http://www.omdbapi.com/?page=${page}&apikey=c5ea3601`;
@@ -21,42 +21,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function displayMovies(movies) {
         swCharList.innerHTML = '';
-        movies.Search.forEach(movie => {
-            const movieElement = document.createElement('div');
-            movieElement.classList.add('sw_char');
-            if (movie.Poster === "N/A"){
+        if (movies.Search) {
+            movies.Search.forEach(movie => {
+                const movieElement = document.createElement('div');
+                movieElement.classList.add('sw_char');
+                if (movie.Poster === "N/A"){
+                    movieElement.innerHTML = `
+                    <p>L'image ne peux pas être charger</p>
+                    <h3>${movie.Title}</h3>
+                `;
+                } else {
                 movieElement.innerHTML = `
-                <p>L'image ne peux pas être charger</p>
-                <h3>${movie.Title}</h3>
+                    <img src="${movie.Poster}" alt="${movie.Title}">
+                    <h3>${movie.Title}</h3>
+                `;
+                }
+                swCharList.appendChild(movieElement);
+                nextPageButton.style.visibility = "visible";
+                lastPageButton.style.visibility = "visible";
+            })
+        } else {
+            swCharList.innerHTML = `
+            <p>Aucun résultat</p>
             `;
-            } else {
-            movieElement.innerHTML = `
-                <img src="${movie.Poster}" alt="${movie.Title}">
-                <h3>${movie.Title}</h3>
-            `;
-            }
-            swCharList.appendChild(movieElement);
-        });
+            nextPageButton.style.visibility = "hidden";
+            lastPageButton.style.visibility = "hidden";
+        }
         document.getElementById('loader').style.display = "none";
     }
 
     function loadPreviousPage() {
         if (currentPage > 1) {
             currentPage--;
-            fetchOmdbData(currentPage, searchInput.value)
+            fetchData(currentPage, searchInput.value)
                 .then(displayMovies);
         }
     }
 
     function loadNextPage() {
         currentPage++;
-        fetchOmdbData(currentPage, searchInput.value)
+        fetchData(currentPage, searchInput.value)
             .then(displayMovies);
     }
 
     function recupSearch() {
         currentPage = 1;
-        fetchOmdbData(currentPage, searchInput.value)
+        fetchData(currentPage, searchInput.value)
             .then(displayMovies);
             
     }
