@@ -9,13 +9,12 @@ document.addEventListener('DOMContentLoaded', function () {
     function fetchOmdbData(page, search) {
         document.getElementById('loader').style.display = "block";
         swCharList.innerHTML = '';
-
         let apiUrl = `http://www.omdbapi.com/?page=${page}&apikey=c5ea3601`;
 
         if (search) {
             apiUrl += `&s=${search}`;
         }
-
+        
         return fetch(apiUrl)
             .then(response => response.json());
     }
@@ -25,12 +24,17 @@ document.addEventListener('DOMContentLoaded', function () {
         movies.Search.forEach(movie => {
             const movieElement = document.createElement('div');
             movieElement.classList.add('sw_char');
-
+            if (movie.Poster === "N/A"){
+                movieElement.innerHTML = `
+                <p>L'image ne peux pas être charger</p>
+                <h3>${movie.Title}</h3>
+            `;
+            } else {
             movieElement.innerHTML = `
                 <img src="${movie.Poster}" alt="${movie.Title}">
                 <h3>${movie.Title}</h3>
             `;
-
+            }
             swCharList.appendChild(movieElement);
         });
         document.getElementById('loader').style.display = "none";
@@ -54,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
         currentPage = 1;
         fetchOmdbData(currentPage, searchInput.value)
             .then(displayMovies);
+            
     }
 
     loadNextPage();
