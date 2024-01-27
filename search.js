@@ -21,25 +21,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function displayMovies(movies) {
         swCharList.innerHTML = '';
-        if (movies.Search) {
+    
+        if (movies.Search && movies.Search.length > 0) {
             movies.Search.forEach(movie => {
                 const movieElement = document.createElement('div');
                 movieElement.classList.add('sw_char');
                 movieElement.innerHTML = `
-                    <img src="${movie.Poster}" alt="Le Poster ne peux pas être charger">
+                    <img src="${movie.Poster}" alt="Le Poster ne peut pas être chargé">
                     <h3>${movie.Title}</h3>
                 `;
                 swCharList.appendChild(movieElement);
                 nextPageButton.style.visibility = "visible";
                 lastPageButton.style.visibility = "visible";
-            })
+            });
         } else {
             swCharList.innerHTML = `
-            <p>Aucun résultat</p>
+                <p>Veuillez effectuer une recherche.</p>
             `;
             nextPageButton.style.visibility = "hidden";
             lastPageButton.style.visibility = "hidden";
         }
+    
         document.getElementById('loader').style.display = "none";
     }
 
@@ -48,6 +50,9 @@ document.addEventListener('DOMContentLoaded', function () {
             currentPage--;
             fetchData(currentPage, searchInput.value)
                 .then(displayMovies);
+        } else {
+            lastPageButton.style.backgroundColor = "red";
+            alert("Vous êtes déjà à la première page, vous ne pouvez pas revenir en arrière.");
         }
     }
 
@@ -55,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
         currentPage++;
         fetchData(currentPage, searchInput.value)
             .then(displayMovies);
+            lastPageButton.style.backgroundColor = "#10242D";
     }
 
     function recupSearch() {
