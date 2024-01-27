@@ -68,3 +68,18 @@ header {
     box-shadow: 0px 0px 10px #888888;
     margin-top: 1%;
 }
+
+.back_button {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin-top: 1.5%;
+    width: 10%;
+    height: 10%;
+    background-color: #10242D;
+    font-size: 2em;
+    color: #e7e9ea;
+    border-radius: 10px;
+    border-style: hidden;
+    box-shadow: 0px 0px 5px #081115;
+}
