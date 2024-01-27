@@ -51,23 +51,21 @@ document.addEventListener('DOMContentLoaded', function () {
             fetchData(currentPage, searchInput.value)
                 .then(displayMovies);
         } else {
-            lastPageButton.style.backgroundColor = "red";
             alert("Vous êtes déjà à la première page, vous ne pouvez pas revenir en arrière.");
         }
     }
+
 
     function loadNextPage() {
         currentPage++;
         fetchData(currentPage, searchInput.value)
             .then(displayMovies);
-            lastPageButton.style.backgroundColor = "#10242D";
     }
 
     function recupSearch() {
         currentPage = 1;
         fetchData(currentPage, searchInput.value)
             .then(displayMovies);
-            
     }
 
     loadNextPage();
