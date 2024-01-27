@@ -86,12 +86,11 @@ body {
     box-shadow: 0px 0px 10px 0px #888888;
 }
 
-#sw_char_list {
-    width: 70%;
+#liste_films {
+    width: 97.3%;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
-    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-wrap: wrap;
@@ -99,13 +98,32 @@ body {
     align-items: center;
 }
 
-#sw_char_list li {
+#liste_films img {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0px 0px 10px 0px #888888;
+    
+}
+
+#liste_films li {
     list-style: none;
     
 }
-#sw_char_list li:last-child {
+#liste_films li:last-child {
     border-bottom: #333 solid 1px;
     padding-bottom: 40px;
+}
+
+#liste_films h3 {
+    font-size: 1em;
+    font-weight: bold;
+    color: #10242D;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 button,#next_page, #previous_page{
@@ -136,4 +154,13 @@ p{
 
 #next_page, #previous_page{
     visibility:hidden;
+}
+
+h1{
+    font-size: 2em;
+    font-weight: bold;
+    color: #10242D;
+    margin-top: 2%;
+    margin-left: 1.5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

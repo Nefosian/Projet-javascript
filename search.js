@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const swCharList = document.getElementById('sw_char_list');
+    const swCharList = document.getElementById('liste_films');
     const nextPageButton = document.getElementById('next_page');
     const lastPageButton = document.getElementById('previous_page');
     const searchButton = document.getElementById('searchButton');
@@ -25,17 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
             movies.Search.forEach(movie => {
                 const movieElement = document.createElement('div');
                 movieElement.classList.add('sw_char');
-                if (movie.Poster === "N/A"){
-                    movieElement.innerHTML = `
-                    <p>L'image ne peux pas être charger</p>
-                    <h3>${movie.Title}</h3>
-                `;
-                } else {
                 movieElement.innerHTML = `
-                    <img src="${movie.Poster}" alt="${movie.Title}">
+                    <img src="${movie.Poster}" alt="Le Poster ne peux pas être charger">
                     <h3>${movie.Title}</h3>
                 `;
-                }
                 swCharList.appendChild(movieElement);
                 nextPageButton.style.visibility = "visible";
                 lastPageButton.style.visibility = "visible";
