@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dela+Gothic+One&family=Ultra&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue';
+    background-color: #e7e9ea;
+}
+
+header {
+    background-color: #10242D;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+
+.navbar_logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.navbar_search,
+.navbar_account {
+    display: flex;
+    align-items: center;
+}
+
+.navbar_search img,
+.navbar_account img {
+    width: 50px;
+    height: 50px;
+    margin-left: 30px;
+}
+
+.navbar_search:hover p,.navbar_account:hover p {
+    opacity: 1;
+}
+
+.navbar_search p,
+.navbar_account p {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    color: #e7e9ea;
+    margin-left: 15px;
+    font-size: 1em;
+}
+
+.body_container {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.poster_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 97.5%;
+    height: 500px;
+    border-radius: 10px;
+    background-color: #E1E0E0;
+    box-shadow: 0px 0px 10px #888888;
+    margin-top: 1%;
+}
