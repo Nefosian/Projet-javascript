@@ -1,65 +1,56 @@
-.navbar {
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e7e9ea;
+}
+
+header {
     background-color: #10242D;
-    width: 100%;
-    height: 150px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
 }
 
 .navbar_container {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    width: 100%;
-    height: 100%;
 }
 
-.navbar_logo {
+.navbar_logo img {
     width: 100px;
     height: 100px;
-    margin-left: 50px;
 }
 
-.navbar_search {
-    width: 10%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0px;
-    margin-left: 65%;
-}
-
+.navbar_search,
 .navbar_account {
-    width: 10%;
-    height: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: 0px;
+}
+
+.navbar_search img,
+.navbar_account img {
+    width: 50px;
+    height: 50px;
+    margin-left: 30px;
 }
 
 .navbar_container p {
-    font-size: 1.5em;
-    font-weight: bold;
     color: #ffffff;
-    margin:0px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    font-size: 1em;
 }
 
-#logo {
-    width: 100%;
-    height: 100%;
-}
-
-#search {
-    width: 50px;
-    height: 50px;
-}
-
-#account {
-    width: 50px;
-    height: 50px;
+body h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #10242D;
+    margin-top: 2%;
+    margin-left: 1.5%;
 }
 
 .body_container {
@@ -69,18 +60,8 @@
     align-items: center;
 }
 
-h1 {
-    font-size: 3em;
-    font-weight: bold;
-    color: #10242D;
-    margin-top: 5%;
-    margin-left: 1.5%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 .poster_container {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 97.5%;
@@ -88,6 +69,7 @@ h1 {
     border-radius: 10px;
     background-color: #E1E0E0;
     box-shadow: 0px 0px 10px #888888;
+    margin-top: 1%;
 }
 
 .poster {
@@ -98,18 +80,68 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 0 10px;
+    position: relative;
 }
 
+.poster img {
+    width: 70%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.poster:hover img {
+    transform: scale(1.1);
+}
+
+.poster_description {
+    position: absolute;
+    bottom: 11%;
+    left: 11.5%;
+    width: 77%;
+    height: 93%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+}
+
+.poster:hover .poster_description {
+    opacity: 1;
+}
+
+.en_savoir_plus {
+    margin-top: 15%;
+    background-color: #e7e9ea;
+    padding: 5px;
+    color: #10242D;
+    border-radius: 4px;
+}
+
+
 .button_container {
-    margin-top: 1%;
+    margin-top: 2%;
 }
 
 .button_container button {
-    width: 100%;
-    height: 3%;
+    width: 200px;
+    height: 40px;
+    background-color: #10242D;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease-in-out;
 }
 
-.poster img{
-    width: 80%;
-    height: 100%;
+.button_container button:hover {
+    background-color: #3f4f56;
 }
