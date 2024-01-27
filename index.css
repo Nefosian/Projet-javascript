@@ -37,12 +37,7 @@ header {
     margin-left: 30px;
 }
 
-.navbar_search:hover p {
-    opacity: 1;
-}
-
-
-.navbar_account:hover p {
+.navbar_search:hover p,.navbar_account:hover p {
     opacity: 1;
 }
 
