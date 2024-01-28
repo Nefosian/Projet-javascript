@@ -46,13 +46,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function loadPreviousPage() {
-        if (currentPage > 1) {
-            currentPage--;
-            fetchData(currentPage, searchInput.value)
-                .then(displayMovies);
-        } else {
-            alert("You are already on the first page, you cannot go back.");
-        }
+        showTransitionEffect();
+        setTimeout(function () {
+            if (currentPage > 1) {
+                currentPage--;
+                fetchData(currentPage, searchInput.value)
+                    .then(displayMovies);
+            } else {
+                alert("You are already on the first page, you cannot go back.");
+            }
+        }, 500);
     }
 
 
