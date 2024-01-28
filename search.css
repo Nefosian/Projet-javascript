@@ -157,6 +157,7 @@ button:hover,#next_page:hover,#previous_page:hover {
 }
 
 
+
 .transition-effect {
     opacity: 0;
     transform: translateY(-20px);
