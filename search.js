@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const movieElement = document.createElement('div');
                 movieElement.classList.add('film');
                 movieElement.innerHTML = `
-                    <img src="${movie.Poster}" alt="Le Poster ne peut pas être chargé">
+                    <img src="${movie.Poster}" alt="Poster cannot be loaded">
                     <h3>${movie.Title}</h3>
                 `;
                 filmList.appendChild(movieElement);
@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 lastPageButton.style.visibility = "visible";
             });
         } else {
-            filmList.innerHTML = `
-                <p>Veuillez effectuer une recherche.</p>
+            swCharList.innerHTML = `
+                <p>Please do a search.</p>
             `;
             nextPageButton.style.visibility = "hidden";
             lastPageButton.style.visibility = "hidden";
@@ -51,23 +51,21 @@ document.addEventListener('DOMContentLoaded', function () {
             fetchData(currentPage, searchInput.value)
                 .then(displayMovies);
         } else {
-            lastPageButton.style.backgroundColor = "red";
-            alert("Vous êtes déjà à la première page, vous ne pouvez pas revenir en arrière.");
+            alert("You are already on the first page, you cannot go back.");
         }
     }
+
 
     function loadNextPage() {
         currentPage++;
         fetchData(currentPage, searchInput.value)
             .then(displayMovies);
-            lastPageButton.style.backgroundColor = "#10242D";
     }
 
     function recupSearch() {
         currentPage = 1;
         fetchData(currentPage, searchInput.value)
             .then(displayMovies);
-            
     }
 
     loadNextPage();

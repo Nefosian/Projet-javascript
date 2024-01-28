@@ -1,18 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dela+Gothic+One&family=Ultra&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue';
+    background-color:#0c1c24;
+    text-align: center;
+}
+
 header {
-    background-color: #10242D;
+    background-color: #09151b;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 15px;
 }
 
-.navbar_container {
-    display: flex;
-    align-items: center;
-}
 
 .navbar_logo img {
     width: 100px;
@@ -32,49 +38,35 @@ header {
     margin-left: 30px;
 }
 
-.navbar_container p {
-    color: #ffffff;
-    margin: 0;
+.navbar_search:hover p,.navbar_account:hover p {
+    opacity: 1;
+}
+
+.navbar_search p,
+.navbar_account p {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    color: #e7e9ea;
+    margin-left: 15px;
     font-size: 1em;
 }
 
-#logo {
-    width: 100%;
-    height: 100%;
-}
 
-#search {
-    width: 50px;
-    height: 50px;
-}
-
-#account {
-    width: 50px;
-    height: 50px;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
-    text-align: center;
-}
 
 .body_container {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-top: 3%;
+    background-color: #0c1c24;
+    padding-bottom: 50px;
 }
 
 .body_searchbar {
     width: 80%;
     background-color: #E1E0E0;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px #888888;
+    box-shadow: 0px 0px 10px 0px #879196;
 }
 
 #liste_films {
@@ -82,7 +74,6 @@ body {
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -130,7 +121,7 @@ button,#next_page, #previous_page{
     transition: all 0.2s ease-in-out;
 }
 
-button:hover,#next_page:hover, #previous_page:hover {
+button:hover,#next_page:hover,#previous_page:hover {
     background-color: #0056b3;
 }
 
@@ -139,19 +130,18 @@ button:hover,#next_page:hover, #previous_page:hover {
     display: none
 }
 
-p{
-    color: red;
-}
-
 #next_page, #previous_page{
     visibility: hidden;
 }
 
-h1{
-    font-size: 2em;
+.titre{
+    font-size: 1.2em;
     font-weight: bold;
-    color: #10242D;
-    margin-top: 2%;
-    margin-left: 1.5%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    background-color: #09151b;
+    border-bottom-right-radius: 300px;
+    border-bottom-left-radius: 300px;
+    padding-top: 0.1px;
+    margin-bottom: 50px;
+    padding-bottom: 0.1px;
 }
