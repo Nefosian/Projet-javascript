@@ -29,14 +29,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 movieElement.innerHTML = `
                     <img src="${movie.Poster}" alt="Poster cannot be loaded">
                     <h3>${movie.Title}</h3>
+                    <a href="movie.html?id=${movie.imdbID}">En savoir plus</a>
                 `;
                 filmList.appendChild(movieElement);
                 nextPageButton.style.visibility = "visible";
                 lastPageButton.style.visibility = "visible";
             });
         } else {
-            swCharList.innerHTML = `
-                <p>Please do a search.</p>
+            filmList.innerHTML = `
+                <p style=color:red;>Please do a search ...</p>
             `;
             nextPageButton.style.visibility = "hidden";
             lastPageButton.style.visibility = "hidden";
