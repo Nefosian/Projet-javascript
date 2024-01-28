@@ -57,15 +57,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function loadNextPage() {
-        currentPage++;
-        fetchData(currentPage, searchInput.value)
+        showTransitionEffect();
+        setTimeout(function () {
+            currentPage++;
+            fetchData(currentPage, searchInput.value)
             .then(displayMovies);
+        }, 500); 
+        
+        
+        
     }
 
     function recupSearch() {
-        currentPage = 1;
-        fetchData(currentPage, searchInput.value)
+        showTransitionEffect();
+        setTimeout(function () {
+            currentPage = 1;
+            fetchData(currentPage, searchInput.value)
             .then(displayMovies);
+        }, 500); 
     }
 
     loadNextPage();
@@ -73,4 +82,14 @@ document.addEventListener('DOMContentLoaded', function () {
     lastPageButton.addEventListener('click', loadPreviousPage);
     nextPageButton.addEventListener('click', loadNextPage);
     searchButton.addEventListener('click', recupSearch);
+
+    function showTransitionEffect() {
+        filmList.classList.add("transition-effect");
+        setTimeout(function () {
+            filmList.classList.remove("transition-effect");
+        }, 500); 
+    }
+
+
+
 });

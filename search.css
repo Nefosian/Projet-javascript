@@ -4,12 +4,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Bebas Neue';
-    background-color:#0c1c24;
+    background-color:	#C4C5BA;
     text-align: center;
 }
 
 header {
-    background-color: #09151b;
+    background-color: 	#1B1B1B;
 }
 
 .navbar {
@@ -58,15 +58,15 @@ header {
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: #0c1c24;
+    background-color:#C4C5BA;
     padding-bottom: 50px;
 }
 
 .body_searchbar {
     width: 90%;
     background-color: #E1E0E0;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px #879196;
+    border-radius: 10%;
+    box-shadow: 0px 0px 100px 0px #879196;
 }
 
 #liste_films {
@@ -78,6 +78,7 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     justify-content: space-around;
+    border-radius: 10px;
 }
 
 #liste_films img {
@@ -147,10 +148,17 @@ button:hover,#next_page:hover,#previous_page:hover {
     font-size: 1.2em;
     font-weight: bold;
     color: #fff;
-    background-color: #09151b;
-    border-bottom-right-radius: 300px;
-    border-bottom-left-radius: 300px;
+    background-color: #1B1B1B;
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
     padding-top: 0.1px;
     margin-bottom: 50px;
     padding-bottom: 0.1px;
+}
+
+
+.transition-effect {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
