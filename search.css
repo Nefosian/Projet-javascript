@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background-color: 	#1B1B1B;
+    background-color: 	#10242D;
 }
 
 .navbar {
@@ -148,7 +148,7 @@ button:hover,#next_page:hover,#previous_page:hover {
     font-size: 1em;
     font-weight: bold;
     color: #fff;
-    background-color: #1B1B1B;
+    background-color: #10242D;
     border-bottom-right-radius: 100%;
     border-bottom-left-radius: 100%;
     padding-top: 0.1px;
