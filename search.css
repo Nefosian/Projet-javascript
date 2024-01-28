@@ -163,3 +163,46 @@ button:hover,#next_page:hover,#previous_page:hover {
     transform: translateY(-20px);
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
+
+
+.poster_description {
+    position: absolute;
+    bottom: 11%;
+    left: 11.5%;
+    width: 77%;
+    height: 93%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a{
+    text-decoration: none;
+    color: #10242D;
+}
+
+
+.poster_description:hover {
+    opacity: 1;
+}
+
+.en_savoir_plus {
+    margin-top: 15%;
+    background-color: #9da2a5;
+    padding: 5px;
+    color: #10242D;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.en_savoir_plus:hover {
+    background-color: #e7e9ea;
+    color: #e7e9ea;
+}
