@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
         
         return fetch(apiUrl)
             .then(response => response.json());
-    }
-
+    }   
+    
     function displayMovies(movies) {
         filmList.innerHTML = '';
     
@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 500);
     }
 
-
     function loadNextPage() {
         showTransitionEffect();
         setTimeout(function () {
@@ -67,19 +66,17 @@ document.addEventListener('DOMContentLoaded', function () {
             fetchData(currentPage, searchInput.value)
             .then(displayMovies);
         }, 500); 
-        
-        
-        
     }
 
     function recupSearch() {
-        showTransitionEffect();
         setTimeout(function () {
             currentPage = 1;
-            fetchData(currentPage, searchInput.value)
+            fetchData(currentPage, searchInput.value)   
             .then(displayMovies);
         }, 500); 
     }
+
+    searchInput.addEventListener('input', recupSearch);
 
     loadNextPage();
 
@@ -93,7 +90,4 @@ document.addEventListener('DOMContentLoaded', function () {
             filmList.classList.remove("transition-effect");
         }, 500); 
     }
-
-
-
 });
