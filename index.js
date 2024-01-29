@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         moviesContainer.appendChild(poster);
     }
 
-    const movieTitles = ['Gladiator 2', 'Furiosa: A Mad Max Saga', 'Civil War', 'Godzilla x Kong', 'road house'];
+    const movieTitles = ['Blade', 'Furiosa: A Mad Max Saga', 'Civil War', 'Godzilla x Kong', 'Alien Romulus'];
 
     for (const title of movieTitles) {
         const movieData = await getMovieData(title);
@@ -31,4 +31,43 @@ document.addEventListener('DOMContentLoaded', async () => {
             addMovieToContainer(movieData);
         }
     }
+
+
+    const gameMenuContent = document.querySelector('.game-menu-content');
+    const prevButton = document.querySelector('.prev-button');
+    const nextButton = document.querySelector('.next-button');
+
+    let scrollAmount = 0;
+    const cardWidth = 1993;
+
+    prevButton.addEventListener('click', () => {
+        scrollAmount += cardWidth;
+        gameMenuContent.style.transform = `translateX(${scrollAmount}px)`;
+        updateButtonState();
+    });
+
+    nextButton.addEventListener('click', () => {
+        scrollAmount -= cardWidth;
+        gameMenuContent.style.transform = `translateX(${scrollAmount}px)`;
+        updateButtonState();
+    });
+
+    function updateButtonState() {
+        prevButton.disabled = scrollAmount >= 0;
+        nextButton.disabled = scrollAmount <= -6000;
+    }
+
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > 5000) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    updateButtonState();
+
 });

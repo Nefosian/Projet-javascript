@@ -165,3 +165,56 @@ a{
 .button_container button:hover {
     background-color: #3f4f56;
 }
+
+
+
+.game-menu-container {
+    overflow: hidden;
+    max-width: 100%;
+    height: 850px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.game-menu-content {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.game-card {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 850px;
+    justify-content: center;
+    background-color: #0e26de;
+}
+
+.game-card img {
+    width: 100%;
+    height: 850px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.prev-button {
+    left: 1%;
+}
+
+.next-button {
+    right: 1%;
+}
