@@ -7,214 +7,156 @@ body {
     background-color: #e7e9ea;
 }
 
-header {
-    background-color: 	#10242D;
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
+body,html {
+    background: #000000;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 6rem;
 }
 
 
-.navbar_logo img {
-    width: 100px;
-    height: 100px;
+
+img {
+    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
+    transition: all 0.5s ease;
 }
 
-.navbar_search,
-.navbar_account {
-    display: flex;
-    align-items: center;
+.title_img {
+    position: absolute;
+    width: 100%;
+    left: 2rem;
+    bottom: 2rem;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    color: white;
 }
 
-.navbar_search img,
-.navbar_account img {
-    width: 50px;
-    height: 50px;
-    margin-left: 30px;
+.title_img h1 {
+    width: 70%;
+    font-size: 2.5rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.navbar_search:hover p,.navbar_account:hover p {
-    opacity: 1;
+.title_img button{
+    padding: 10px 20px;
+    border: 1px solid rgb(150, 34, 34);
+    color: rgb(255, 255, 255);
+    outline: black;
+    background-color: #000000;
+    transition: all 0.5s ease;
 }
 
-.navbar_search p,
-.navbar_account p {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    color: #e7e9ea;
-    margin-left: 15px;
-    font-size: 1em;
+.title_img button:hover{
+    background-color: rgb(150, 34, 34);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
 }
 
-
-body h1 {
-    font-size: 2em;
-    font-weight: bold;
-    color: #10242D;
-    margin-top: 2%;
-    margin-left: 1.5%;
-}
-
-.body_container {
-    margin-top: 2%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.poster_container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 97.5%;
-    height: 400px;
-    border-radius: 10px;
-    background-color: #E1E0E0;
-    box-shadow: 0px 0px 10px #888888;
-    margin-top: 1%;
-}
-
-.poster {
-    width: 15%;
-    height: 90%;
-    background-color: #CECCCC;
-    display: flex;
-    flex-direction: column;
+.column img{
+	width: 102%;
+    position: relative;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin: 0 10px;
-    position: relative;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.poster img {
-    width: 70%;
-    height: 100%;
-    transition: transform 0.3s ease-in-out;
-    border-radius: 5px;
+
+
+
+.case_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
 }
 
-.poster:hover img {
+.case_container img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
+}
+
+
+.case_container img:hover {
     transform: scale(1.1);
 }
 
-.poster_description {
+.case {
+    flex: 0 0 20%;
+    margin: 1rem;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.title_movies {
+    color: rgb(255, 255, 255);
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center; 
+}
+
+
+
+.case {
+    position: relative;
+    overflow: hidden;
+}
+
+.case img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.2));
+}
+
+.case:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.case .poster-description {
     position: absolute;
-    bottom: 11%;
-    left: 11.5%;
-    width: 77%;
-    height: 93%;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease;
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'times new roman', cursive;
 }
 
-a{
-    text-decoration: none;
-    color: #10242D;
-}
-
-
-.poster_description:hover {
+.case:hover .poster-description {
     opacity: 1;
 }
 
-.en_savoir_plus {
-    margin-top: 15%;
-    background-color: #9da2a5;
-    padding: 5px;
-    color: #10242D;
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out;
+.poster-description p{
+    padding-bottom: 30px;
 }
 
-.en_savoir_plus:hover {
-    background-color: #e7e9ea;
-    color: #e7e9ea;
-}
-
-
-.button_container {
-    margin-top: 2%;
-}
-
-.button_container button {
-    width: 200px;
-    height: 40px;
-    background-color: #10242D;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.button_container button:hover {
-    background-color: #3f4f56;
-}
-
-
-
-.game-menu-container {
-    overflow: hidden;
-    max-width: 100%;
-    height: 850px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.game-menu-content {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-}
-
-.game-card {
-    flex: 0 0 auto;
+.en-savoir-plus a{
+    color: rgb(132, 37, 37);
     width: 100%;
-    height: 850px;
-    justify-content: center;
-    background-color: #0e26de;
+    font-size: 1.5rem;
+    text-align: center; 
+    text-decoration: none;
+    font-family: 'bebas neue', cursive;
 }
 
-.game-card img {
-    width: 100%;
-    height: 850px;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-
+.en-savoir-plus a:hover {
+    color: rgb(199, 17, 17);
 }
 
-
-.prev-button,
-.next-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #ffffff;
-}
-
-.prev-button {
-    left: 1%;
-}
-
-.next-button {
-    right: 1%;
-}
