@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
     function displayMovies(movies) {
         filmList.innerHTML = '';
-    
         if (movies.Search && movies.Search.length > 0) {
             movies.Search.forEach(movie => {
                 const movieElement = document.createElement('div');

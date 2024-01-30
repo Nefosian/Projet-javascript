@@ -3,13 +3,15 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Bebas Neue';
-    background-color:	#C4C5BA;
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
     text-align: center;
 }
 
 header {
-    background-color: 	#10242D;
+    background-color: #2c3e50;
+    color: #ffffff;
 }
 
 .navbar {
@@ -17,12 +19,13 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 15px;
+    background-color: #2c3e50;
+    border-bottom: 2px solid #34495e;
 }
 
-
 .navbar_logo img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 }
 
 .navbar_search,
@@ -33,12 +36,13 @@ header {
 
 .navbar_search img,
 .navbar_account img {
-    width: 50px;
-    height: 50px;
-    margin-left: 30px;
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
 }
 
-.navbar_search:hover p,.navbar_account:hover p {
+.navbar_search:hover p,
+.navbar_account:hover p {
     opacity: 1;
 }
 
@@ -46,64 +50,61 @@ header {
 .navbar_account p {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    color: #e7e9ea;
+    color: #ecf0f1;
     margin-left: 15px;
     font-size: 1em;
 }
-
-
 
 .body_container {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color:#C4C5BA;
+    background-color: #1a1a1a;
     padding-bottom: 50px;
 }
 
 .body_searchbar {
     width: 90%;
-    background-color: #E1E0E0;
-    border-radius: 10%;
-    box-shadow: 0px 0px 100px 0px #879196;
+    background-color: #34495e;
+    border-radius: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 #liste_films {
     width: 90%;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
-    display: flex; 
+    background-color: #2c3e50;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     justify-content: space-around;
-    border-radius: 10px;
+    border-radius: 0;
 }
 
 #liste_films img {
-    width: 200px;
-    height: 300px;
-    border-radius: 10px;
+    width: 180px;
+    height: 270px;
+    border-radius: 0;
     margin: 10px;
-    box-shadow: 0px 0px 10px 0px #888888;
-    z-index: 0;
-    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
 
 #liste_films li {
     list-style: none;
-    
 }
+
 #liste_films li:last-child {
     border-bottom: #333 solid 1px;
     padding-bottom: 40px;
 }
 
 #liste_films h3 {
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: bold;
-    color: #10242D;
+    color: #ecf0f1;
     margin: 0;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -112,85 +113,87 @@ header {
     flex-wrap: wrap;
 }
 
-
-a{
+a {
     text-decoration: none;
-    color: #fff;
+    color: #ffffff;
 }
 
+.film {
+    position: relative;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0;
+    overflow: hidden;
+}
 
 .film a {
-    width: 14%;
-    height: 40%;
+    width: 98%;
+    height: 80.5%;
     position: absolute;
+    top: 0;
+    left: 0;
     background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-family: 'Times New Roman', Times, serif;
-    border-radius: 10px;
-    transition: all 0.5s ease-in-out;
+    border-radius: 0;
+    transition: opacity 0.5s ease-in-out;
     opacity: 0;
-    z-index: 1;
-    padding-bottom: 10px;
-    color: #fff;
 }
 
 
-.film a:hover{
+
+.film a:hover {
     opacity: 1;
 }
 
-
-.film {
-    width: 210px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-
-.film:hover img{
+.film:hover img {
     transform: scale(1.07);
 }
 
-
-button,#next_page, #previous_page{
+button,
+#next_page,
+#previous_page {
     padding: 10px 15px;
     font-size: 16px;
     margin: 10px;
     cursor: pointer;
-    background-color: #10242D;
-    color: #fff;
+    background-color: #2c3e50;
+    color: #ffffff;
     border: none;
-    border-radius: 5px;
-    align-items: center;
-    transition: all 0.2s ease-in-out;
+    border-radius: 0;
+    transition: background-color 0.2s ease-in-out;
 }
 
-button:hover,#next_page:hover,#previous_page:hover {
-    background-color: #0056b3;
+button:hover,
+#next_page:hover,
+#previous_page:hover {
+    background-color: #34495e;
 }
 
 #loader {
     color: #333;
-    display: none
+    display: none;
 }
 
-#next_page, #previous_page{
+#next_page,
+#previous_page {
     visibility: hidden;
 }
 
-.titre{
-    font-size: 1em;
+.titre {
+    font-size: 1.5em;
     font-weight: bold;
-    color: #fff;
-    background-color: #10242D;
-    border-bottom-right-radius: 100%;
-    border-bottom-left-radius: 100%;
-    padding-top: 0.1px;
+    color: #ffffff;
+    background-color: #2c3e50;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-top: 2px;
     margin-bottom: 50px;
-    padding-bottom: 0.1px;
+    padding-bottom: 2px;
 }
 
 .transition-effect {
@@ -199,3 +202,16 @@ button:hover,#next_page:hover,#previous_page:hover {
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
+#searchInput {
+    width: 60%;
+    height: 40px;
+    border: none;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+    padding: 10px;
+    background-color: transparent;
+    color: #ecf0f1;
+    text-transform: capitalize;
+    border-bottom: 2px solid #ecf0f1;
+}
