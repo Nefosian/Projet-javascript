@@ -1,37 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="search.css">
     <title>Revo Cine - Search</title>
 </head>
-<header>
-    <div class="navbar">
-        <div class="navbar_container">
-            <div class="navbar_logo">
-                <img src="logo-blanc2.png" alt="Logo">
-            </div>
-        </div>
-        <div class="navbar_search">
-            <img src="search.png" alt="Search">
-            <p>Search</p>
-        </div>
-        <div class="navbar_account">
-            <img src="account.png" alt="Account">
-            <p>Account</p>
-        </div>
-    </div>
-</header>
 <body>
-    <div class="titre">
-        <h1>Search</h1>
+    <div class="menu">
+        <div class="logo">
+            <img src="./logo-blanc2.png"alt="logo">
+        </div>
+        <div class="menu_items">
+            <a href="index.html">Home</a>
+            <a href="search.html">Search</a>
+        </div>
     </div>
     <div class="body_container">
-        <div class="body_searchbar">
+        <div class="search_container">
             <input type="text" id="searchInput" placeholder="Search...">
-
-
             <div id="liste_films"></div>
             <h2 id="loader">Loading ...</h2>
             <button id="previous_page">Previous Page</button>
