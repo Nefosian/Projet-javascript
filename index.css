@@ -5,6 +5,7 @@ body {
     padding: 0;
     font-family: 'Bebas Neue';
     background-color: #e7e9ea;
+    --color_red:rgb(150, 34, 34);
 }
 
 body,html {
@@ -20,6 +21,41 @@ img {
     -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
     transition: all 0.5s ease;
 }
+
+.menu {
+    position: absolute;
+    width: 100%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    color: white;
+    z-index: 100;
+    display: flex;
+}
+
+.menu img {
+    width: 75px;
+    -webkit-box-reflect:below 0px linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.1));
+}
+
+.menu_items a{
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;  
+    transition: all 0.5s ease;
+}
+
+.menu_items a:last-child{
+    padding-left: 100px;
+}
+.menu_items{
+    padding-left: 40%;
+}
+
+.menu_items a:hover{
+    color: var(--color_red);
+}
+
 
 .title_img {
     position: absolute;
@@ -39,7 +75,7 @@ img {
 
 .title_img button{
     padding: 10px 20px;
-    border: 1px solid rgb(150, 34, 34);
+    border: 1px solid var(--color_red);
     color: rgb(255, 255, 255);
     outline: black;
     background-color: #000000;
@@ -47,12 +83,12 @@ img {
 }
 
 .title_img button:hover{
-    background-color: rgb(150, 34, 34);
+    background-color: var(--color_red);
     color: rgb(255, 255, 255);
     cursor: pointer;
 }
 
-.column img{
+.img_title img{
 	width: 102%;
     position: relative;
     justify-content: center;
@@ -148,15 +184,16 @@ img {
 }
 
 .en-savoir-plus a{
-    color: rgb(132, 37, 37);
+    color: var(--color_red);
     width: 100%;
     font-size: 1.5rem;
     text-align: center; 
     text-decoration: none;
     font-family: 'bebas neue', cursive;
+    transition: all 0.5s ease;
 }
 
 .en-savoir-plus a:hover {
-    color: rgb(199, 17, 17);
+    color: rgb(230, 0, 0);
 }
 
