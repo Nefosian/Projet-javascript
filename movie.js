@@ -16,16 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="info">
                 <h1>${data.Title}</h1>
                 <ul class="movie-info">
-                    <li>Runtime : ${data.Runtime} <br> Genre : ${data.Genre}</li>
+                    <li>Runtime : ${data.Runtime} <br> Genre : ${data.Genre} <br> Note : ${data.imdbRating} <br> DVD Release : ${data.DVD}</li>                  
                 </ul>
             </div>
             <div class="summary">
                 <h5>SUMMARY :</h5>
                 <p>${data.Plot}</p>    
-            </div>
-            <div class="actors">
                 <h5>ACTORS :</h5>
-                <p>${data.Actors}</p>
+                <p>${data.Actors}</p>      
             </div>
         </div>
         `;  
@@ -33,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const url = data.Poster;
         body.style.backgroundImage = `linear-gradient(rgba(30, 27, 38, 0.95), rgba(30, 27, 38, 1)),url(${url})`
     }
-
     fetchData().then(renderData);
 
 });
