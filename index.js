@@ -74,4 +74,22 @@ document.addEventListener('DOMContentLoaded', async () => {
             caseContainer.classList.remove("transition-effect");
         }, 600); 
     }
+
+    const logoAnimation = document.querySelector('.logo-animation');
+    const mainContent = document.querySelector('.top');
+
+    function playLogoAnimation() {
+        setTimeout(() => {
+            logoAnimation.classList.add('fade-out');
+            mainContent.style.display = 'block';
+
+            setTimeout(() => {
+                logoAnimation.style.display = 'none';
+            }, 2000);
+        }, 1000);
+    }
+
+    playLogoAnimation();
+
+    playLogoAnimation();
 });
