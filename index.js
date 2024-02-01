@@ -10,8 +10,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     function addMovieToContainer(movieData, isShowMore = false) {
         const poster = document.createElement('div');
         poster.className = 'case';
-
-        // Ajoutez une classe spécifique pour les éléments "Show more"
         if (isShowMore) {
             poster.classList.add('show-more');
         }
@@ -45,21 +43,35 @@ document.addEventListener('DOMContentLoaded', async () => {
     const showmore = async () => {
         if (button.innerHTML === 'Show more') {
             for (const titles of movieTitles_show_more) {
-                const movieDatas = await getMovieData(titles);
-                if (movieDatas) {
-                    addMovieToContainer(movieDatas, true);
-                }
+                showTransitionEffect();
+                setTimeout(async function () {
+                    const movieDatas = await getMovieData(titles);
+                    if (movieDatas) {
+                        addMovieToContainer(movieDatas, true);
+                    }
+                }, 600);
             }
             button.innerHTML = 'Show less';
         } else if (button.innerHTML === 'Show less') {
-            const showMoreElements = document.querySelectorAll('.show-more');
-            showMoreElements.forEach(element => {
-                element.remove();
-            });
-
+            showTransitionEffect();
+            setTimeout(async function () {
+                const showMoreElements = document.querySelectorAll('.show-more');
+                showMoreElements.forEach(element => {
+                    element.remove();
+                });
+            },600);
             button.innerHTML = 'Show more';
         }
     };
 
     button.addEventListener('click', showmore);
+
+
+    function showTransitionEffect() {
+        const caseContainer = document.getElementById('case_container');
+        caseContainer.classList.add("transition-effect");
+        setTimeout(function () {
+            caseContainer.classList.remove("transition-effect");
+        }, 600); 
+    }
 });

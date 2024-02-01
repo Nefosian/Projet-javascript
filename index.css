@@ -196,3 +196,9 @@ img {
     text-align: center;
     margin-top: 2rem;
 }
+
+.transition-effect {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s ease-in-out;
+}
