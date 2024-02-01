@@ -85,8 +85,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             setTimeout(() => {
                 logoAnimation.style.display = 'none';
-            }, 2000);
-        }, 1000);
+            }, 1000);
+        }, 100);
     }
 
     playLogoAnimation();
