@@ -66,7 +66,7 @@ img {
     font-family: 'Courier New', Courier, monospace;
 }
 
-.title_img button{
+.title_img button,button{
     padding: 10px 20px;
     border: 1px solid var(--color_red);
     color: rgb(255, 255, 255);
@@ -75,7 +75,7 @@ img {
     transition: all 0.5s ease;
 }
 
-.title_img button:hover{
+.title_img button:hover,button:hover{
     background-color: var(--color_red);
     color: rgb(255, 255, 255);
     cursor: pointer;
@@ -190,3 +190,9 @@ img {
     color: rgb(230, 0, 0);
 }
 
+
+.show_more{
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+}
